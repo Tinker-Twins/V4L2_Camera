@@ -47,15 +47,20 @@ $ ros2 run rqt_image_view rqt_image_view
 
 ## Launch
 
-Launch the camera node and separately view the camera output, for instance by running the RQT image viewer.
+**OPTION 1:** Launch the camera node and separately view the camera output, for instance by running the RQT image viewer.
 ```bash
 # Open new terminal.
 ros2 launch v4l2_camera camera.launch.py
 # Open new terminal.
 $ ros2 run rqt_image_view rqt_image_view
 ```
+NOTE: Ignore the following errors/warnings.
+```bash
+[ERROR] [1676909521.403530709] [camera_calibration_parsers]: Unable to open camera calibration file [/home/user/.ros/camera_info/integrated_webcam_hd:_integrate.yaml]
+[WARN] [1676909521.403548765] [v4l2_camera]: Camera calibration file /home/user/.ros/camera_info/integrated_webcam_hd:_integrate.yaml not found
+```
 
-Launch the camera node and view the camera output.
+**OPTION 2:** Launch the camera node and view the camera output.
 ```bash
 # Open new terminal.
 $ ros2 launch v4l2_camera camera_view.launch.py
