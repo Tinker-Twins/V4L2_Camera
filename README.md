@@ -8,8 +8,8 @@ First, we will create a new workspace and clone the code for the `v4l2_camera` p
 ```bash
 # Open new terminal.
 $ mkdir -p ~/V4L2_Camera/src && cd ~/V4L2_Camera/src
-$ git clone https://github.com/Tinker-Twins/V4L2_Camera
-# Clone following repositories for default functionalities.
+$ git clone https://github.com/Tinker-Twins/V4L2_Camera.git
+# Clone following repositories instead for default functionalities.
 # $ git clone --branch foxy https://gitlab.com/boldhearts/ros2_v4l2_camera.git
 # $ git clone --branch foxy https://github.com/ros-perception/vision_opencv.git
 # $ git clone --branch foxy https://github.com/ros-perception/image_common.git
@@ -42,9 +42,26 @@ NOTE: Ignore the following errors/warnings.
 View the camera output, for instance by running the RQT image viewer:
 ```bash
 # Open new terminal.
-ros2 run rqt_image_view rqt_image_view
+$ ros2 run rqt_image_view rqt_image_view
+```
+
+## Launch
+
+Launch the camera node and separately view the camera output, for instance by running the RQT image viewer.
+```bash
+# Open new terminal.
+ros2 launch v4l2_camera camera.launch.py
+# Open new terminal.
+$ ros2 run rqt_image_view rqt_image_view
+```
+
+Launch the camera node and view the camera output.
+```bash
+# Open new terminal.
+$ ros2 launch v4l2_camera camera_view.launch.py
 ```
 
 ## Reference:
-https://gitlab.com/boldhearts/ros2_v4l2_camera
+
+https://gitlab.com/boldhearts/ros2_v4l2_camera \
 https://medium.com/swlh/raspberry-pi-ros-2-camera-eef8f8b94304
