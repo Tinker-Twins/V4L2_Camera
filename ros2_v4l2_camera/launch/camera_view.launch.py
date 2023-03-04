@@ -45,4 +45,8 @@ def generate_launch_description():
             name='rqt_node',
             emulate_tty=True,
         ),
+        ExecuteProcess(
+            cmd=[['ros2 param set /camera_node image_size [80,60]']],
+            shell=True,
+       )
     ])
