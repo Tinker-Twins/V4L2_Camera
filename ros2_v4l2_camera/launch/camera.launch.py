@@ -39,4 +39,8 @@ def generate_launch_description():
             ('image_raw/theora', 'image/theora'),
             ],
         ),
+        ExecuteProcess(
+            cmd=[['ros2 param set /camera_node image_size [80,60]']],
+            shell=True,
+        )
     ])
