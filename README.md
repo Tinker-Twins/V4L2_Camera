@@ -30,7 +30,7 @@ $ source install/local_setup.bash
 
 And finally you can run the camera node:
 ```bash
-# Open new terminal.
+$ # Open new terminal.
 $ ros2 run v4l2_camera v4l2_camera_node
 ```
 NOTE: Ignore the following errors/warnings.
@@ -41,7 +41,7 @@ NOTE: Ignore the following errors/warnings.
 
 View the camera output, for instance by running the RQT image viewer:
 ```bash
-# Open new terminal.
+$ # Open new terminal.
 $ ros2 run rqt_image_view rqt_image_view
 ```
 
@@ -49,9 +49,9 @@ $ ros2 run rqt_image_view rqt_image_view
 
 **OPTION 1:** Launch the camera node and separately view the camera output, for instance by running the RQT image viewer.
 ```bash
-# Open new terminal.
-ros2 launch v4l2_camera camera.launch.py
-# Open new terminal.
+$ # Open new terminal.
+$ ros2 launch v4l2_camera camera.launch.py
+$ # Open new terminal.
 $ ros2 run rqt_image_view rqt_image_view
 ```
 NOTE: Ignore the following errors/warnings.
