@@ -1,5 +1,5 @@
-# V4L2 Camera - ROS2 Foxy
-Camera Frame Grabbing with Video4Linux2 (V4L2) for ROS2 Foxy
+# V4L2 Camera - ROS 2 Foxy
+Camera Frame Grabbing with Video4Linux2 (V4L2) for ROS 2 Foxy
 
 ## Clone
 
@@ -44,6 +44,7 @@ View the camera output, for instance by running the RQT image viewer:
 $ # Open new terminal.
 $ ros2 run rqt_image_view rqt_image_view
 ```
+When doing so, select the /image/compressed topic rather than the base /image so that the images are streamed much more efficiently (at a higher rate).
 
 ## Launch
 
@@ -54,18 +55,36 @@ $ ros2 launch v4l2_camera camera.launch.py
 $ # Open new terminal.
 $ ros2 run rqt_image_view rqt_image_view
 ```
-NOTE: Ignore the following errors/warnings.
+NOTE 1: Ignore the following errors/warnings.
 ```bash
 [ERROR] [1676909521.403530709] [camera_calibration_parsers]: Unable to open camera calibration file [/home/user/.ros/camera_info/integrated_webcam_hd:_integrate.yaml]
 [WARN] [1676909521.403548765] [v4l2_camera]: Camera calibration file /home/user/.ros/camera_info/integrated_webcam_hd:_integrate.yaml not found
 ```
+NOTE 2: Select the /image/compressed topic rather than the base /image so that the images are streamed much more efficiently (at a higher rate).
 
 **OPTION 2:** Launch the camera node and view the camera output.
 ```bash
 # Open new terminal.
 $ ros2 launch v4l2_camera camera_view.launch.py
 ```
+NOTE: Select the /image/compressed topic rather than the base /image so that the images are streamed much more efficiently (at a higher rate).
 
+## Parameters:
+
+The driver exposes the controls supported by the camera as ROS parameters and all of them can be listed with:
+```bash
+$ ros2 param list /camera_node
+```
+
+Further, the ROS 2 CLI can be used to see what these parameters are for and which values are available and what they mean, with `ros2 param describe` command. One can get and set their values dynamically with `ros2 param get` and `ros2 param set` commands.
+```bash
+$ # Describe parameter
+$ ros2 param describe /camera_node image_size
+$ # Get parameter
+$ ros2 param get /camera_node image_size
+$ # Set parameter
+$ ros2 param set /camera_node image_size [320,240]
+```
 ## Reference:
 
 https://gitlab.com/boldhearts/ros2_v4l2_camera \
