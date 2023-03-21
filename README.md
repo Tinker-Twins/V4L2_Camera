@@ -69,7 +69,7 @@ $ ros2 launch v4l2_camera camera_view.launch.py
 ```
 NOTE: Select the /image/compressed topic rather than the base /image so that the images are streamed much more efficiently (at a higher rate).
 
-## Parameters:
+## Parameters
 
 The driver exposes the controls supported by the camera as ROS parameters and all of them can be listed with:
 ```bash
@@ -91,7 +91,11 @@ $ ros2 param set /camera_node image_size [320,240]
 $ sudo v4l2-ctl -d /dev/video0 --list-formats-ex
 ```
 
-## Reference:
+## Calibration
+
+The camera calibration `yaml` file can be placed in the `$HOME/.ros/camera_info` directory renamed and populated with the correct camera name.
+
+## Reference
 
 https://gitlab.com/boldhearts/ros2_v4l2_camera \
 https://medium.com/swlh/raspberry-pi-ros-2-camera-eef8f8b94304
